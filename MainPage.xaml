@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TabBugRepro.MainPage">
+
+
+ 
+
+    <Grid ColumnDefinitions="*, *">
+
+        <!--Start of Column 0-->
+
+        <VerticalStackLayout Grid.Column="0" Padding="5">
+            <Entry
+                FontSize="12" 
+                HeightRequest="50"/>
+            <Entry
+                FontSize="12" 
+                HeightRequest="50"/>
+            <Entry
+                FontSize="12" 
+                HeightRequest="50"/>
+        </VerticalStackLayout>
+
+        <!--Start of Column 1-->
+        <CollectionView 
+            Grid.Column="1">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type Color}">
+                    <Color>Red</Color>
+                    <Color>Green</Color>
+                    <Color>Blue</Color>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Entry  
+                        FontSize="12" 
+                        HeightRequest="50"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>
